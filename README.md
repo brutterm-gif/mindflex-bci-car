@@ -1,125 +1,175 @@
-# MindFlex BCI – EEG-gesteuertes RC-Auto
+# MindFlex BCI – EEG-controlled RC car
 
-Ein Brain-Computer-Interface-Projekt: Ein umgebautes MindFlex-EEG-Headset (ThinkGear-Chip)
-liefert über einen Arduino seine Messwerte – per USB-Kabel oder kabellos über Bluetooth LE.
-Eine Python-Anwendung wertet die Signale in Echtzeit aus, lernt aus Trainingsaufnahmen
-mehrere Machine-Learning-Modelle an und setzt deren Vorhersagen in Fahrbefehle für ein
-selbst konstruiertes, 3D-gedrucktes RC-Auto mit vier Motoren um.
+**English** | [Deutsch](README.de.md)
 
-Entstanden als praktischer Teil einer Seminarfacharbeit zum Thema
-*„Brain-Computer-Interfaces – Wie Gedanken Maschinen steuern“*.
+A brain-computer interface project: a modified MindFlex EEG headset sends its readings through
+an Arduino – over USB or wirelessly via Bluetooth LE. A Python application analyses the signals
+in real time, trains several machine-learning models on recorded sessions and turns their
+predictions into driving commands for a self-designed, 3D-printed RC car with four motors.
+
+Built as the practical part of a school research paper (*Seminarfacharbeit*) on
+*“Brain-computer interfaces – how thoughts control machines”*.
 
 <p align="center">
-  <img src="docs/images/car-angle.jpg" alt="Das fertige RC-Auto mit 3D-gedrucktem Chassis, vier Motoren und Arduino mit Motor-Shield" width="640">
+  <img src="docs/images/car-angle.jpg" alt="The finished RC car with 3D-printed chassis, four motors and an Arduino with motor shield" width="640">
 </p>
+
+**[⬇ Download version 3.4](https://github.com/brutterm-gif/mindflex-bci-car/releases/latest)** ·
+[Parts list](docs/TEILELISTE.md) · [Wiring](docs/images/wiring.svg) ·
+[Architecture](docs/ARCHITEKTUR.md)
+
+> The application interface and the detailed documentation in `docs/` are in German.
 
 ## Screenshots
 
-Live-Vorhersage mit EEG-Verlauf, eSense-Werten, Fahrbefehl und Modellgenauigkeit:
+Live prediction with EEG history, eSense values, driving command and model accuracy:
 
 | FORWARD | STOP |
 |---|---|
-| ![Vorhersage FORWARD](docs/images/gui-prediction-forward.png) | ![Vorhersage STOP](docs/images/gui-prediction-stop.png) |
+| ![Prediction FORWARD](docs/images/gui-prediction-forward.png) | ![Prediction STOP](docs/images/gui-prediction-stop.png) |
 
-| Kalibrierung | Verwechslungsmatrix |
+| Calibration | Confusion matrix |
 |---|---|
-| ![Kalibrierung abgeschlossen](docs/images/gui-calibration.png) | ![Verwechslungsmatrix des KNN-Modells](docs/images/gui-confusion-matrix.png) |
+| ![Calibration finished](docs/images/gui-calibration.png) | ![Confusion matrix of the KNN model](docs/images/gui-confusion-matrix.png) |
 
 <details>
-<summary><b>Weitere Screenshots</b></summary>
+<summary><b>More screenshots</b></summary>
 
-| Vorhersage BACKWARD | Auto verbunden, Fahrsperre aus |
+| Prediction BACKWARD | Car connected, drive lock off |
 |---|---|
-| ![Vorhersage BACKWARD](docs/images/gui-prediction-backward.png) | ![Auto verbunden, Fahrsperre aus](docs/images/gui-car-connected.png) |
+| ![Prediction BACKWARD](docs/images/gui-prediction-backward.png) | ![Car connected, drive lock off](docs/images/gui-car-connected.png) |
 
-| Handbetrieb (W A S D) | Headset ohne Hautkontakt |
+| Manual driving (W A S D) | Headset without skin contact |
 |---|---|
-| ![Handbetrieb](docs/images/gui-manual-drive.png) | ![Headset ohne Hautkontakt, Messung pausiert](docs/images/gui-no-contact.png) |
+| ![Manual driving](docs/images/gui-manual-drive.png) | ![Headset without skin contact, recording paused](docs/images/gui-no-contact.png) |
 
-| Kalibrierung läuft | Helle Ansicht |
+| Calibration running | Light mode |
 |---|---|
-| ![Kalibrierung: Block 1 von 18, Augen zu](docs/images/gui-calibration-run.png) | ![Helle Ansicht](docs/images/gui-light-mode.png) |
+| ![Calibration: block 1 of 18, eyes closed](docs/images/gui-calibration-run.png) | ![Light mode](docs/images/gui-light-mode.png) |
 
-| Trainingsdaten mit Empfehlungen | Einzelne Aufnahme im Graphen |
+| Training data with recommendations | Single recording as a graph |
 |---|---|
-| ![Übersicht der Trainingsdaten](docs/images/gui-training-data.png) | ![Aufnahme FORWARD im Graphen](docs/images/gui-recording-graph.png) |
+| ![Overview of the training data](docs/images/gui-training-data.png) | ![Recording FORWARD as a graph](docs/images/gui-recording-graph.png) |
 
 </details>
 
-## Projektstruktur
+## Results
 
-```
-MindFlex_BCI_Projekt/   Python-Anwendung: Empfang (USB/BLE), Feature-Extraktion, Training
-                        und Klassifikation (KNN, Random Forest, Decision Tree), PyQt5-GUI
-                        mit Kalibrierung, Profilen, Fahrsperre und Handbetrieb, Autosteuerung
-  arduino/              Sketches für den EEG-Arduino und das RC-Auto
-BrainGrapher/           Processing-Sketch zur Live-Visualisierung der rohen EEG-Werte,
-                        erweitert um eine Bluetooth-Brücke (ble_bridge.py)
-BrainGrapher_Python/    Nachbau des BrainGraphers in Python (PyQt5/pyqtgraph)
-hardware/               3D-Modell des Chassis (STL)
-docs/                   Architektur-Dokumentation und Abbildungen
-```
+The headset measures with a single electrode on the forehead. That is enough to tell apart
+states that show up clearly there – not “thinking left or right”. The car is therefore
+controlled with three states you can produce on purpose:
 
-Die ausführliche Beschreibung aller Komponenten, Entscheidungen und Fehlerbilder steht in
-[`docs/ARCHITEKTUR.md`](docs/ARCHITEKTUR.md).
-
-## Herkunft und eigener Anteil
-
-`BrainGrapher/` basiert auf dem quelloffenen
-[Processing-Brain-Grapher](https://github.com/kitschpatrol/Processing-Brain-Grapher) von
-Eric Mika (MIT-Lizenz, siehe [`BrainGrapher/LICENSE.txt`](BrainGrapher/LICENSE.txt)). Er
-diente als Ausgangspunkt, um die Rohdaten des MindFlex-Headsets zuverlässig zu empfangen und
-sichtbar zu machen. Ergänzt wurde die Anbindung per Bluetooth LE. `BrainGrapher_Python/`
-ist eine Übertragung dieses Sketches nach Python.
-
-Der Sketch `mindflex_eeg.ino` beruht auf dem Beispiel *BrainSerialTest* der
-[Arduino Brain Library](https://github.com/kitschpatrol/Brain), ebenfalls von Eric Mika.
-
-`MindFlex_BCI_Projekt/` ist eine eigene Neuentwicklung: die Datenverarbeitungs-Pipeline
-(Validierung, Ringpuffer, Feature-Extraktion), das Trainings- und Klassifikationssystem mit
-automatischer Auswahl des besten Modells, die Oberfläche mit Kalibrierung und Profilen, die
-Bluetooth-Anbindung sowie die Ansteuerung des RC-Autos. Ebenso eigen sind der Sketch
-`rc_car_4wd.ino` und das Chassis.
-
-## Hardware-Aufbau
-
-1. **EEG-Arduino (Uno):** Der T-Pin des ThinkGear-Chips im MindFlex-Headset hängt am
-   Arduino. Mit der [Arduino Brain Library](https://github.com/kitschpatrol/Brain) gibt er
-   jede Sekunde eine CSV-Zeile aus (SignalQuality, Attention, Meditation, Delta, Theta,
-   LowAlpha, HighAlpha, LowBeta, HighBeta, LowGamma, HighGamma) – über USB oder ein
-   BLE-Modul. Arduino und Funkmodul sitzen direkt am Headset, eine eigene
-   Batteriebox versorgt sie.
-
-| Headset mit Arduino | Seitenansicht |
-|---|---|
-| ![MindFlex-Headset mit aufgesetztem Arduino Uno und BLE-Modul](docs/images/hardware-headset-arduino.jpg) | ![MindFlex-Headset von der Seite](docs/images/hardware-headset-side.jpg) |
-| **Geöffnet: Abgriff am ThinkGear-Chip** | **Rückseite mit Batteriebox** |
-| ![Geöffnetes Headset: Platine mit ThinkGear-Chip, Kabel zum Arduino](docs/images/hardware-headset-open.jpg) | ![Rückseite des Headsets mit Batteriebox und Ohrclip-Elektrode](docs/images/hardware-headset-back.jpg) |
-
-2. **RC-Auto (Arduino Duemilanove):** empfängt per Bluetooth LE Einzelzeichen-Befehle
-   (`F`/`B`/`L`/`R`/`S`) und steuert über ein L293D-Motor-Shield vier Motoren an. Gelenkt
-   wird wie bei einem Panzer: Zum Drehen laufen die beiden Seiten gegenläufig.
-
-| Von vorn | Von oben | Von hinten |
+| Command | What you do | Why it works |
 |---|---|---|
-| ![RC-Auto von vorn](docs/images/car-front.jpg) | ![RC-Auto von oben: Motor-Shield und Verkabelung der vier Motoren](docs/images/car-top.jpg) | ![RC-Auto von hinten mit USB-Anschluss](docs/images/car-back.jpg) |
+| STOP | close your eyes | alpha waves rise sharply (Berger effect) |
+| FORWARD | open your eyes | alpha drops again |
+| BACKWARD | shake your head or clench your jaw | muscle signal picked up by the forehead electrode |
 
-| Chassis | Technische Zeichnung |
+**Accuracy** (one profile, three commands, 12 recordings totalling 285 seconds, evaluated on
+held-out whole recordings):
+
+| Method | Accuracy |
 |---|---|
-| ![Chassis](docs/images/chassis-car.png) | ![Bemaßte Zeichnung des Chassis](docs/images/chassis-car-drawing.png) |
+| k-nearest neighbours | **85.8 %** |
+| Random forest | 85 % |
+| Decision tree | 81 % |
+| Baseline (always guess the most frequent class) | 48.7 % |
 
-Das Chassis liegt als [`hardware/chassis_car.stl`](hardware/chassis_car.stl) bei und kann
-direkt gedruckt werden.
+STOP was recognised correctly 90 % of the time, BACKWARD 84 % and FORWARD 81 %. The most common
+confusion is FORWARD vs. STOP – mostly right after opening the eyes, because alpha only drops
+after 2–3 seconds.
 
-## Schnellstart
+**How it got there:**
 
-**Voraussetzungen:** Python 3.12, die [Arduino IDE](https://www.arduino.cc/en/software) mit
-der [Arduino Brain Library](https://github.com/kitschpatrol/Brain) für den EEG-Arduino und
-optional [Processing](https://processing.org/download) für den `BrainGrapher/`.
+- **20 Aug 2026 – apparently 100 %.** The number was a bug: duplicated rows plus a random split
+  across overlapping windows. Since then, evaluation holds out whole recordings and always shows
+  the baseline next to the accuracy.
+- **22 Aug 2026 – 64.6 %** (random forest) vs. a 52.6 % baseline with STOP, FORWARD and LEFT.
+  The confusion matrix showed LEFT being systematically mistaken for FORWARD – the forehead
+  electrode cannot see the motor cortex. LEFT was dropped.
+- **27 Sep 2026 – blind test of the Berger effect.** From the EEG alone, 94.3 % of the seconds
+  were correctly classified as eyes open or closed; alpha was three times higher with eyes
+  closed.
+- **Afterwards** BACKWARD was added via a muscle signal – which produced the numbers above.
 
-1. `MindFlex_BCI_Projekt/arduino/mindflex_eeg/mindflex_eeg.ino` auf den EEG-Arduino und
-   `MindFlex_BCI_Projekt/arduino/rc_car_4wd/rc_car_4wd.ino` auf den Auto-Arduino hochladen.
-2. Python-Anwendung starten:
+These numbers are for one person and a small amount of data. BACKWARD had only two separate
+recordings; the application itself warns that its figure is therefore still uncertain. Models
+do not transfer between people; everyone needs their own profile.
+
+## Project structure
+
+```
+MindFlex_BCI_Projekt/   Python application: data input (USB/BLE), feature extraction,
+                        training and classification (KNN, random forest, decision tree),
+                        PyQt5 GUI with calibration, profiles, drive lock and manual driving,
+                        car control
+  arduino/              sketches for the EEG Arduino and the RC car
+BrainGrapher/           Processing sketch for live visualisation of the raw EEG values,
+                        extended with a Bluetooth bridge (ble_bridge.py)
+BrainGrapher_Python/    port of the BrainGrapher to Python (PyQt5/pyqtgraph)
+hardware/               3D model of the chassis (STL)
+docs/                   architecture, parts list, images
+```
+
+## Origin and own work
+
+`BrainGrapher/` is based on the open-source
+[Processing Brain Grapher](https://github.com/kitschpatrol/Processing-Brain-Grapher) by
+Eric Mika (MIT licence, see [`BrainGrapher/LICENSE.txt`](BrainGrapher/LICENSE.txt)). It served
+as the starting point for reliably receiving and visualising the headset's data. Bluetooth LE
+support was added. `BrainGrapher_Python/` is a port of that sketch to Python.
+
+The sketch `mindflex_eeg.ino` is based on the *BrainSerialTest* example of the
+[Arduino Brain Library](https://github.com/kitschpatrol/Brain), also by Eric Mika.
+
+`MindFlex_BCI_Projekt/` is original work: the data pipeline (validation, ring buffer, feature
+extraction), the training and classification system with automatic selection of the best
+model, the GUI with calibration and profiles, the Bluetooth link and the RC car control. The
+sketch `rc_car_4wd.ino` and the chassis are original work as well.
+
+## Hardware
+
+All components: [parts list](docs/TEILELISTE.md). Wiring:
+
+![Wiring: headset with Arduino Uno, car with Duemilanove and L293D shield](docs/images/wiring.svg)
+
+1. **Headset and EEG Arduino (Uno):** The MindFlex contains NeuroSky's TGAM module. Two wires
+   are soldered to its T pin and GND and lead to the Arduino. Using the
+   [Arduino Brain Library](https://github.com/kitschpatrol/Brain), the Uno outputs one CSV line
+   per second (SignalQuality, Attention, Meditation, Delta, Theta, LowAlpha, HighAlpha, LowBeta,
+   HighBeta, LowGamma, HighGamma) – over USB or a BLE module. Arduino and radio sit directly on
+   the headset, powered by a switched 9 V battery.
+
+| Headset with Arduino | Side view |
+|---|---|
+| ![MindFlex headset with Arduino Uno and BLE module attached](docs/images/hardware-headset-arduino.jpg) | ![MindFlex headset from the side](docs/images/hardware-headset-side.jpg) |
+| **Opened: TGAM module with soldered wires** | **Other side: 9 V battery and ear clip** |
+| ![Opened headset: green NeuroSky TGAM board with wires soldered on, leading to the Arduino](docs/images/hardware-headset-open.jpg) | ![Other side of the headset with the 9 V battery box for the Arduino and the ear clip reference electrode](docs/images/hardware-headset-back.jpg) |
+
+2. **RC car (Arduino Duemilanove):** receives single-character commands (`F`/`B`/`L`/`R`/`S`)
+   over Bluetooth LE and drives four motors through an L293D motor shield. It steers like a
+   tank: to turn, the two sides run in opposite directions.
+
+| Front | Top | Back |
+|---|---|---|
+| ![RC car from the front](docs/images/car-front.jpg) | ![RC car from above: motor shield and wiring of the four motors](docs/images/car-top.jpg) | ![RC car from behind with USB port](docs/images/car-back.jpg) |
+
+| Chassis | Technical drawing |
+|---|---|
+| ![Chassis](docs/images/chassis-car.png) | ![Dimensioned drawing of the chassis](docs/images/chassis-car-drawing.png) |
+
+The chassis is included as [`hardware/chassis_car.stl`](hardware/chassis_car.stl) and can be
+printed directly.
+
+## Quick start
+
+**Requirements:** Python 3.12, the [Arduino IDE](https://www.arduino.cc/en/software) with the
+[Arduino Brain Library](https://github.com/kitschpatrol/Brain) and the Adafruit Motor Shield
+Library v1, optionally [Processing](https://processing.org/download) for `BrainGrapher/`.
+
+1. Upload `MindFlex_BCI_Projekt/arduino/mindflex_eeg/mindflex_eeg.ino` to the EEG Arduino and
+   `MindFlex_BCI_Projekt/arduino/rc_car_4wd/rc_car_4wd.ino` to the car's Arduino.
+2. Start the Python application:
 
 ```bash
 cd MindFlex_BCI_Projekt
@@ -127,27 +177,25 @@ pip install -r requirements.txt
 python main.py
 ```
 
-Auf dem Mac geht auch ein Doppelklick auf `start.command`, unter Windows auf `start.bat`.
-Ausführliche Anleitung mit Port-Konfiguration und Trainingsmodus:
-[`MindFlex_BCI_Projekt/START_HIER.md`](MindFlex_BCI_Projekt/START_HIER.md) und
+On a Mac you can also double-click `start.command`, on Windows `start.bat`. Setting up
+Bluetooth, creating a profile and calibrating are described (in German) in
 [`MindFlex_BCI_Projekt/README.md`](MindFlex_BCI_Projekt/README.md).
 
-Für die reine Signal-Visualisierung ohne Klassifikation: `BrainGrapher/BrainGrapher.pde` in
-der Processing IDE öffnen (benötigt die Bibliothek ControlP5, installierbar über
-*Sketch → Bibliothek importieren → Bibliothek hinzufügen*).
+For signal visualisation only, open `BrainGrapher/BrainGrapher.pde` in the Processing IDE
+(requires the ControlP5 library, available via *Sketch → Import Library → Add Library*).
 
-## Ablauf
+## Data flow
 
-![MindFlex BCI Pipeline](docs/images/pipeline.svg)
+![MindFlex BCI pipeline](docs/images/pipeline.svg)
 
-## Datenschutz
+## Privacy
 
-Trainingsprofile und EEG-Aufnahmen von Versuchspersonen sind nicht Teil dieses Repos.
-Das mitgelieferte `trained_model.pkl` dient nur als Startpunkt; für brauchbare Ergebnisse
-sollte jede Person über *Kalibrierung* ein eigenes Profil anlegen.
+Training profiles and EEG recordings of test participants are not part of this repository.
+Everyone creates and calibrates their own profile in the application; the data stays local in
+the `profile/` folder.
 
-## Lizenz
+## Licence
 
-- `MindFlex_BCI_Projekt/`, `hardware/`, `docs/`: MIT, siehe [`LICENSE`](LICENSE)
-- `BrainGrapher/`, `BrainGrapher_Python/`: MIT, Copyright (c) 2010-2025 Eric Mika, siehe
-  [`BrainGrapher/LICENSE.txt`](BrainGrapher/LICENSE.txt); Erweiterungen MIT, siehe [`LICENSE`](LICENSE)
+- `MindFlex_BCI_Projekt/`, `hardware/`, `docs/`: MIT, see [`LICENSE`](LICENSE)
+- `BrainGrapher/`, `BrainGrapher_Python/`: MIT, Copyright (c) 2010-2025 Eric Mika, see
+  [`BrainGrapher/LICENSE.txt`](BrainGrapher/LICENSE.txt); extensions MIT, see [`LICENSE`](LICENSE)

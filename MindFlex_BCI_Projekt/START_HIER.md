@@ -13,11 +13,14 @@ python3 main.py
 ```
 
 ## Windows
-Siehe `README.md` (Doppelklick auf `start.bat` nach `pip install -r requirements.txt`).
+`pip install -r requirements.txt` ausführen, dann Doppelklick auf `start.bat`.
+
+## Wie es weitergeht
+Bluetooth einrichten, erstes Profil anlegen, kalibrieren: siehe [`README.md`](README.md).
 
 ## Inhalt
 - `main.py` und die übrigen `.py`-Dateien – das Programm
-- `profile/` – Profile mit Trainingsdaten und Modellen
+- `profile/` – entsteht beim ersten Start; Profile mit Trainingsdaten und Modellen
 - `arduino/` – Sketches für EEG-Arduino (`mindflex_eeg`) und RC-Auto (`rc_car_4wd`, `rc_car_test`), mit der Arduino IDE hochladen
 
 ## Hardware
