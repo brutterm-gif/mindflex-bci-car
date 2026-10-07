@@ -669,7 +669,7 @@ void turnLeft() {
 
 ## 4. Python-Software (Klassifikation & GUI)
 
-**Speicherort:** `~/Downloads/MindFlex_BCI_Projekt/`
+**Speicherort:** `MindFlex_BCI_Projekt/`
 
 ### 4.1 Architektur
 
@@ -933,7 +933,7 @@ Das verhindert, dass das Modell eine überrepräsentierte Klasse bevorzugt.
 
 ```bash
 # Interaktiv Daten sammeln
-cd ~/Downloads/MindFlex_BCI_Projekt
+cd MindFlex_BCI_Projekt
 python3 main.py --mode train
 
 # Ohne Aufnahme, nur Modell neu trainieren
@@ -945,7 +945,7 @@ python3 main.py --mode retrain
 ### Modell-Speicherort
 
 ```
-~/Downloads/MindFlex_BCI_Projekt/trained_model.pkl
+MindFlex_BCI_Projekt/trained_model.pkl
 ```
 
 Wird beim Programmstart automatisch geladen. Falls nicht vorhanden, verwendet das System ein Dummy-Modell.
@@ -1050,7 +1050,7 @@ Beispiel-Ausgabe:
 ### Aktuelles Log anzeigen
 
 ```bash
-cd ~/Downloads/MindFlex_BCI_Projekt
+cd MindFlex_BCI_Projekt
 tail -f mindflex_bci.log
 ```
 
@@ -1209,7 +1209,7 @@ python3 --version
 ### Schritt 2: Pythonpakete installieren
 
 ```bash
-cd ~/Downloads/MindFlex_BCI_Projekt
+cd MindFlex_BCI_Projekt
 pip3 install -r requirements.txt
 ```
 
@@ -1253,7 +1253,7 @@ Sollte CSV-Zeilen ausgeben. Wenn nicht: Headset an, Kontakt auf Stirn prüfen.
 ### Schritt 5: BLE-Modul-Adresse ermitteln
 
 ```bash
-cd ~/Downloads/MindFlex_BCI_Projekt
+cd MindFlex_BCI_Projekt
 python3 ble_scan.py
 ```
 
@@ -1262,7 +1262,7 @@ Notiere die Adresse des Auto-Moduls (CC2541 / HM-10).
 ### Schritt 6: Trainingsdaten sammeln
 
 ```bash
-cd ~/Downloads/MindFlex_BCI_Projekt
+cd MindFlex_BCI_Projekt
 python3 main.py --mode train
 ```
 
@@ -1276,7 +1276,7 @@ Folge den Anweisungen:
 ### Schritt 7: Modell trainieren
 
 ```bash
-cd ~/Downloads/MindFlex_BCI_Projekt
+cd MindFlex_BCI_Projekt
 python3 main.py --mode retrain
 ```
 
@@ -1351,9 +1351,9 @@ Durch BLE-Funklatenz und Arduino-Verarbeitung gibt es eine Verzögerung von ~100
 
 | Datei | Zweck |
 |---|---|
-| `~/Downloads/MindFlex_BCI_Projekt/main.py` | Hauptprogramm |
-| `~/Downloads/MindFlex_BCI_Projekt/training_data.csv` | Trainingsdaten (wächst beim Trainieren) |
-| `~/Downloads/MindFlex_BCI_Projekt/trained_model.pkl` | Gespeichertes ML-Modell |
+| `MindFlex_BCI_Projekt/main.py` | Hauptprogramm |
+| `MindFlex_BCI_Projekt/training_data.csv` | Trainingsdaten (wächst beim Trainieren) |
+| `MindFlex_BCI_Projekt/trained_model.pkl` | Gespeichertes ML-Modell |
 | `~/Documents/Arduino/mindflex_eeg/` | EEG-Arduino-Sketch |
 | `~/Documents/Arduino/rc_car_4wd/` | Auto-Arduino-Sketch |
 | `mindflex_bci.log` | Logs (im Projektordner) |
