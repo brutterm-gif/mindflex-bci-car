@@ -11,6 +11,10 @@ Built as the practical part of a school research paper (*Seminarfacharbeit*) on
 *“Brain-computer interfaces – how thoughts control machines”*.
 
 <p align="center">
+  <img src="docs/images/hardware-headset-front.jpg" alt="The MindFlex headset from the front with Arduino and 9 V battery" width="640">
+</p>
+
+<p align="center">
   <img src="docs/images/car-angle.jpg" alt="The finished RC car with 3D-printed chassis, four motors and an Arduino with motor shield" width="640">
 </p>
 

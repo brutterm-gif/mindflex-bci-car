@@ -12,6 +12,10 @@ Entstanden als praktischer Teil einer Seminarfacharbeit zum Thema
 *„Brain-Computer-Interfaces – Wie Gedanken Maschinen steuern“*.
 
 <p align="center">
+  <img src="docs/images/hardware-headset-front.jpg" alt="Das MindFlex-Headset von vorn mit Arduino und 9-V-Block" width="640">
+</p>
+
+<p align="center">
   <img src="docs/images/car-angle.jpg" alt="Das fertige RC-Auto mit 3D-gedrucktem Chassis, vier Motoren und Arduino mit Motor-Shield" width="640">
 </p>
 
