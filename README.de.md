@@ -144,8 +144,8 @@ Alle Bauteile: [Teileliste](docs/TEILELISTE.md). Verkabelung:
 | Headset mit Arduino | Vorderansicht |
 |---|---|
 | ![MindFlex-Headset mit aufgesetztem Arduino Uno und BLE-Modul](docs/images/hardware-headset-arduino.jpg) | ![MindFlex-Headset von vorn](docs/images/hardware-headset-front.jpg) |
-| **Geöffnet: TGAM-Modul mit angelöteten Drähten** | **Andere Seite: 9-V-Block und Ohrclip** |
-| ![Geöffnetes Headset: grüne TGAM-Platine von NeuroSky mit angelöteten Drähten zum Arduino](docs/images/hardware-headset-open.jpg) | ![Andere Seite des Headsets mit 9-V-Batteriefach für den Arduino und Ohrclip als Referenzelektrode](docs/images/hardware-headset-back.jpg) |
+| **Geöffnet: TGAM-Modul mit angelöteten Drähten** | **Rückseite: 9-V-Block und Ohrclip** |
+| ![Geöffnetes Headset: grüne TGAM-Platine von NeuroSky mit angelöteten Drähten zum Arduino](docs/images/hardware-headset-open.jpg) | ![Rückseite des Headsets mit 9-V-Batteriefach für den Arduino und Ohrclip als Referenzelektrode](docs/images/hardware-headset-back.jpg) |
 
 2. **RC-Auto (Arduino Duemilanove):** empfängt per Bluetooth LE Einzelzeichen-Befehle
    (`F`/`B`/`L`/`R`/`S`) und steuert über ein L293D-Motor-Shield vier Motoren an. Gelenkt

@@ -143,8 +143,8 @@ All components: [parts list](docs/TEILELISTE.md). Wiring:
 | Headset mit Arduino · Headset with Arduino | Vorderansicht · Front view |
 |---|---|
 | ![MindFlex headset with Arduino Uno and BLE module attached](docs/images/hardware-headset-arduino.jpg) | ![MindFlex headset from the front](docs/images/hardware-headset-front.jpg) |
-| **Geöffnet: TGAM-Modul mit angelöteten Drähten · Opened: TGAM module with soldered wires** | **Andere Seite: 9-V-Block und Ohrclip · Other side: 9 V battery and ear clip** |
-| ![Opened headset: green NeuroSky TGAM board with wires soldered on, leading to the Arduino](docs/images/hardware-headset-open.jpg) | ![Other side of the headset with the 9 V battery box for the Arduino and the ear clip reference electrode](docs/images/hardware-headset-back.jpg) |
+| **Geöffnet: TGAM-Modul mit angelöteten Drähten · Opened: TGAM module with soldered wires** | **Rückseite: 9-V-Block und Ohrclip · Back: 9 V battery and ear clip** |
+| ![Opened headset: green NeuroSky TGAM board with wires soldered on, leading to the Arduino](docs/images/hardware-headset-open.jpg) | ![Back of the headset with the 9 V battery box for the Arduino and the ear clip reference electrode](docs/images/hardware-headset-back.jpg) |
 
 2. **RC car (Arduino Duemilanove):** receives single-character commands (`F`/`B`/`L`/`R`/`S`)
    over Bluetooth LE and drives four motors through an L293D motor shield. It steers like a
