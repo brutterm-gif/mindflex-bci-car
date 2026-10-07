@@ -141,9 +141,9 @@ Alle Bauteile: [Teileliste](docs/TEILELISTE.md). Verkabelung:
    LowBeta, HighBeta, LowGamma, HighGamma) – über USB oder ein BLE-Modul. Arduino und
    Funkmodul sitzen direkt am Headset, ein 9-V-Block mit Schalter versorgt sie.
 
-| Headset mit Arduino | Seitenansicht |
+| Headset mit Arduino | Vorderansicht |
 |---|---|
-| ![MindFlex-Headset mit aufgesetztem Arduino Uno und BLE-Modul](docs/images/hardware-headset-arduino.jpg) | ![MindFlex-Headset von der Seite](docs/images/hardware-headset-side.jpg) |
+| ![MindFlex-Headset mit aufgesetztem Arduino Uno und BLE-Modul](docs/images/hardware-headset-arduino.jpg) | ![MindFlex-Headset von vorn](docs/images/hardware-headset-front.jpg) |
 | **Geöffnet: TGAM-Modul mit angelöteten Drähten** | **Andere Seite: 9-V-Block und Ohrclip** |
 | ![Geöffnetes Headset: grüne TGAM-Platine von NeuroSky mit angelöteten Drähten zum Arduino](docs/images/hardware-headset-open.jpg) | ![Andere Seite des Headsets mit 9-V-Batteriefach für den Arduino und Ohrclip als Referenzelektrode](docs/images/hardware-headset-back.jpg) |
 
