@@ -9,6 +9,10 @@ selbst konstruiertes, 3D-gedrucktes RC-Auto mit vier Motoren um.
 Entstanden als praktischer Teil einer Seminarfacharbeit zum Thema
 *„Brain-Computer-Interfaces – Wie Gedanken Maschinen steuern“*.
 
+<p align="center">
+  <img src="docs/images/car-angle.jpg" alt="Das fertige RC-Auto mit 3D-gedrucktem Chassis, vier Motoren und Arduino mit Motor-Shield" width="640">
+</p>
+
 ## Screenshots
 
 Live-Vorhersage mit EEG-Verlauf, eSense-Werten, Fahrbefehl und Modellgenauigkeit:
@@ -20,6 +24,27 @@ Live-Vorhersage mit EEG-Verlauf, eSense-Werten, Fahrbefehl und Modellgenauigkeit
 | Kalibrierung | Verwechslungsmatrix |
 |---|---|
 | ![Kalibrierung abgeschlossen](docs/images/gui-calibration.png) | ![Verwechslungsmatrix des KNN-Modells](docs/images/gui-confusion-matrix.png) |
+
+<details>
+<summary><b>Weitere Screenshots</b></summary>
+
+| Vorhersage BACKWARD | Auto verbunden, Fahrsperre aus |
+|---|---|
+| ![Vorhersage BACKWARD](docs/images/gui-prediction-backward.png) | ![Auto verbunden, Fahrsperre aus](docs/images/gui-car-connected.png) |
+
+| Handbetrieb (W A S D) | Headset ohne Hautkontakt |
+|---|---|
+| ![Handbetrieb](docs/images/gui-manual-drive.png) | ![Headset ohne Hautkontakt, Messung pausiert](docs/images/gui-no-contact.png) |
+
+| Kalibrierung läuft | Helle Ansicht |
+|---|---|
+| ![Kalibrierung: Block 1 von 18, Augen zu](docs/images/gui-calibration-run.png) | ![Helle Ansicht](docs/images/gui-light-mode.png) |
+
+| Trainingsdaten mit Empfehlungen | Einzelne Aufnahme im Graphen |
+|---|---|
+| ![Übersicht der Trainingsdaten](docs/images/gui-training-data.png) | ![Aufnahme FORWARD im Graphen](docs/images/gui-recording-graph.png) |
+
+</details>
 
 ## Projektstruktur
 
@@ -62,10 +87,22 @@ Bluetooth-Anbindung sowie die Ansteuerung des RC-Autos. Ebenso eigen sind der Sk
    Arduino. Mit der [Arduino Brain Library](https://github.com/kitschpatrol/Brain) gibt er
    jede Sekunde eine CSV-Zeile aus (SignalQuality, Attention, Meditation, Delta, Theta,
    LowAlpha, HighAlpha, LowBeta, HighBeta, LowGamma, HighGamma) – über USB oder ein
-   BLE-Modul.
+   BLE-Modul. Arduino und Funkmodul sitzen direkt am Headset, eine eigene
+   Batteriebox versorgt sie.
+
+| Headset mit Arduino | Seitenansicht |
+|---|---|
+| ![MindFlex-Headset mit aufgesetztem Arduino Uno und BLE-Modul](docs/images/hardware-headset-arduino.jpg) | ![MindFlex-Headset von der Seite](docs/images/hardware-headset-side.jpg) |
+| **Geöffnet: Abgriff am ThinkGear-Chip** | **Rückseite mit Batteriebox** |
+| ![Geöffnetes Headset: Platine mit ThinkGear-Chip, Kabel zum Arduino](docs/images/hardware-headset-open.jpg) | ![Rückseite des Headsets mit Batteriebox und Ohrclip-Elektrode](docs/images/hardware-headset-back.jpg) |
+
 2. **RC-Auto (Arduino Duemilanove):** empfängt per Bluetooth LE Einzelzeichen-Befehle
    (`F`/`B`/`L`/`R`/`S`) und steuert über ein L293D-Motor-Shield vier Motoren an. Gelenkt
    wird wie bei einem Panzer: Zum Drehen laufen die beiden Seiten gegenläufig.
+
+| Von vorn | Von oben | Von hinten |
+|---|---|---|
+| ![RC-Auto von vorn](docs/images/car-front.jpg) | ![RC-Auto von oben: Motor-Shield und Verkabelung der vier Motoren](docs/images/car-top.jpg) | ![RC-Auto von hinten mit USB-Anschluss](docs/images/car-back.jpg) |
 
 | Chassis (v25) | Technische Zeichnung |
 |---|---|
