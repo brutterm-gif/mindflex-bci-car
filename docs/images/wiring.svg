@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 830" width="100%" role="img" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
 <title>Verkabelung</title>
-<desc>Oben die EEG-Seite: TGAM-Modul im MindFlex-Headset mit T-Pin an Pin 0 und GND an GND des Arduino Uno, BLE-Modul mit RXD über einen Spannungsteiler aus 1 kOhm und 2 kOhm an Pin 1, Versorgung über einen 9-V-Block am Rundstecker. Unten die Auto-Seite: Arduino Duemilanove mit L293D-Shield, Motoren M1 vorne rechts, M2 vorne links, M3 hinten links, M4 hinten rechts, BLE-Modul mit TXD an Pin 10 und RXD über Spannungsteiler an A0, Batteriefach mit vier AA-Zellen.</desc>
+<desc>Oben die EEG-Seite: TGAM-Modul im MindFlex-Headset mit T-Pin an Pin 0 und GND an GND des Arduino Uno, BLE-Modul mit RXD direkt an Pin 1, Versorgung über einen 9-V-Block am Rundstecker. Unten die Auto-Seite: Arduino Duemilanove mit L293D-Shield, Motoren M1 vorne rechts, M2 vorne links, M3 hinten links, M4 hinten rechts, BLE-Modul mit TXD an Pin 10 und RXD optional direkt an A0, Batteriefach mit vier AA-Zellen.</desc>
 <style>
   .bg { fill: #ffffff; }
   .hw { fill: #e6f1fb; stroke: #185fa5; }
@@ -83,17 +83,9 @@
 <text class="p pin" x="608" y="198">VCC</text>
 <text class="p pin" x="608" y="228">GND</text>
 
-<!-- Spannungsteiler EEG -->
-<path class="ws" d="M480 114 L505 114"/>
-<rect class="res" x="505" y="108" width="34" height="12" rx="2"/>
-<text class="s sub" x="522" y="102" text-anchor="middle">1 kΩ</text>
-<path class="ws" d="M539 114 L600 114"/>
-<circle cx="565" cy="114" r="3" class="pin"/>
-<path class="ws" d="M565 114 L565 126"/>
-<rect class="res" x="559" y="126" width="12" height="30" rx="2"/>
-<text class="s sub" x="577" y="146">2 kΩ</text>
-<path class="ws" d="M565 156 L565 164"/>
-<g class="g"><line class="w" x1="555" y1="164" x2="575" y2="164"/><line class="w" x1="559" y1="169" x2="571" y2="169"/><line class="w" x1="563" y1="174" x2="567" y2="174"/></g>
+<!-- RXD direkt -->
+<line class="w" x1="480" y1="114" x2="600" y2="114"/>
+<text class="s sub" x="540" y="107" text-anchor="middle">TX → RXD</text>
 
 <line class="w" x1="480" y1="194" x2="600" y2="194"/>
 <line class="w" x1="480" y1="224" x2="600" y2="224"/>
@@ -104,9 +96,9 @@
 <text class="s sub" x="390" y="337" text-anchor="middle">wenn kein USB-Kabel steckt</text>
 <line class="w" x1="390" y1="300" x2="390" y2="265"/>
 
-<text class="s sub" x="510" y="314">Der Spannungsteiler macht aus den</text>
-<text class="s sub" x="510" y="330">5 V des Arduino die 3,3 V, die der</text>
-<text class="s sub" x="510" y="346">Eingang des Moduls verträgt.</text>
+<text class="s sub" x="510" y="314">Alle Verbindungen direkt,</text>
+<text class="s sub" x="510" y="330">ohne Widerstände – so aufgebaut</text>
+<text class="s sub" x="510" y="346">und getestet.</text>
 
 <line class="sep" x1="30" y1="372" x2="730" y2="372" stroke-width="1"/>
 
@@ -162,20 +154,11 @@
 <line class="w" x1="412" y1="660" x2="412" y2="745"/>
 <line class="w" x1="458" y1="660" x2="458" y2="745"/>
 
-<!-- Spannungsteiler Auto -->
-<path class="ws" d="M310 660 L310 672"/>
-<rect class="res" x="304" y="672" width="12" height="30" rx="2"/>
-<text class="s sub" x="298" y="692" text-anchor="end">1 kΩ</text>
-<path class="ws" d="M310 702 L310 745"/>
-<circle cx="310" cy="716" r="3" class="pin"/>
-<path class="ws" d="M310 716 L284 716"/>
-<rect class="res" x="250" y="710" width="34" height="12" rx="2"/>
-<text class="s sub" x="267" y="704" text-anchor="middle">2 kΩ</text>
-<path class="ws" d="M250 716 L232 716 L232 724"/>
-<g class="g"><line class="w" x1="222" y1="724" x2="242" y2="724"/><line class="w" x1="226" y1="729" x2="238" y2="729"/><line class="w" x1="230" y1="734" x2="234" y2="734"/></g>
+<!-- Rückkanal direkt, optional -->
+<line class="w" x1="310" y1="660" x2="310" y2="745" stroke-dasharray="5 4"/>
 
 <text class="s sub" x="510" y="700">Pin 10 empfängt die Fahrbefehle.</text>
-<text class="s sub" x="510" y="716">A0 ist nur für den Rückkanal nötig.</text>
+<text class="s sub" x="510" y="716">A0 (gestrichelt) nur für den Rückkanal.</text>
 <text class="s sub" x="510" y="732">Nicht Pin 11 benutzen – dort liegt</text>
 <text class="s sub" x="510" y="748">der PWM-Ausgang von Motor 1.</text>
 </svg>

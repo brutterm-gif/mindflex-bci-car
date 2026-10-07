@@ -56,12 +56,12 @@ TGAM GND     → Uno GND
 nur für Funk:
 BLE VCC      → 5V
 BLE GND      → GND
-BLE RXD      → Pin 1 (TX) über Spannungsteiler 1 kΩ / 2 kΩ
+BLE RXD      → Pin 1 (TX)
 BLE TXD      → nicht angeschlossen
 ```
 
-Der Spannungsteiler ist Pflicht: Der Uno sendet mit 5 V, das Modul verträgt am Eingang nur
-3,3 V. Die Bibliothek liest den Chip und schreibt die fertigen Zeilen auf derselben Hardware-
+Alle Verbindungen sind direkt, ohne Widerstände – so ist das Headset aufgebaut und getestet.
+Die Bibliothek liest den Chip und schreibt die fertigen Zeilen auf derselben Hardware-
 Schnittstelle – Pin 0 ist Eingang, Pin 1 Ausgang, das stört sich nicht. Das Funkmodul hört
 einfach mit, was ohnehin an Pin 1 hinausgeht.
 
@@ -89,9 +89,11 @@ Funkmodul am Duemilanove:
 
 ```
 BLE TXD → Pin 10   (SoftwareSerial RX)
-BLE RXD → Pin A0   über Spannungsteiler 1 kΩ / 2 kΩ (nur für den Rückkanal nötig)
+BLE RXD → Pin A0   (nur für den Rückkanal nötig)
 BLE VCC → 5V,  GND → GND
 ```
+
+Auch hier ohne Widerstände.
 
 **Nicht Pin 11 verwenden.** Viele Anleitungen legen das Funkmodul auf `SoftwareSerial(10, 11)`,
 aber auf dem HW-130 ist Pin 11 der PWM-Ausgang von Motor 1. Belegt sind durch das Shield:
