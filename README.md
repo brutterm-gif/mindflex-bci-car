@@ -56,7 +56,7 @@ MindFlex_BCI_Projekt/   Python-Anwendung: Empfang (USB/BLE), Feature-Extraktion,
 BrainGrapher/           Processing-Sketch zur Live-Visualisierung der rohen EEG-Werte,
                         erweitert um eine Bluetooth-Brücke (ble_bridge.py)
 BrainGrapher_Python/    Nachbau des BrainGraphers in Python (PyQt5/pyqtgraph)
-hardware/               3D-Modell des Chassis (STL, Stand v25)
+hardware/               3D-Modell des Chassis (STL)
 docs/                   Architektur-Dokumentation und Abbildungen
 ```
 
@@ -104,9 +104,9 @@ Bluetooth-Anbindung sowie die Ansteuerung des RC-Autos. Ebenso eigen sind der Sk
 |---|---|---|
 | ![RC-Auto von vorn](docs/images/car-front.jpg) | ![RC-Auto von oben: Motor-Shield und Verkabelung der vier Motoren](docs/images/car-top.jpg) | ![RC-Auto von hinten mit USB-Anschluss](docs/images/car-back.jpg) |
 
-| Chassis (v25) | Technische Zeichnung |
+| Chassis | Technische Zeichnung |
 |---|---|
-| ![Chassis v25](docs/images/chassis-v25.png) | ![Bemaßte Zeichnung des Chassis](docs/images/chassis-v25-drawing.png) |
+| ![Chassis](docs/images/chassis-car.png) | ![Bemaßte Zeichnung des Chassis](docs/images/chassis-car-drawing.png) |
 
 Das Chassis liegt als [`hardware/chassis_car.stl`](hardware/chassis_car.stl) bei und kann
 direkt gedruckt werden.
