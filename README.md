@@ -108,7 +108,7 @@ Bluetooth-Anbindung sowie die Ansteuerung des RC-Autos. Ebenso eigen sind der Sk
 |---|---|
 | ![Chassis v25](docs/images/chassis-v25.png) | ![Bemaßte Zeichnung des Chassis](docs/images/chassis-v25-drawing.png) |
 
-Das Chassis liegt als [`hardware/chassis_v25.stl`](hardware/chassis_v25.stl) bei und kann
+Das Chassis liegt als [`hardware/chassis_car.stl`](hardware/chassis_car.stl) bei und kann
 direkt gedruckt werden.
 
 ## Schnellstart
