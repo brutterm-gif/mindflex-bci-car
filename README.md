@@ -140,8 +140,6 @@ der Processing IDE öffnen (benötigt die Bibliothek ControlP5, installierbar ü
 
 ![MindFlex BCI Pipeline](docs/images/pipeline.svg)
 
-![BrainGrapher in Processing](docs/images/braingrapher-processing.png)
-
 ## Datenschutz
 
 Trainingsprofile und EEG-Aufnahmen von Versuchspersonen sind nicht Teil dieses Repos.
