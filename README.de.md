@@ -82,21 +82,8 @@ Richtig erkannt wurden STOP zu 90 %, BACKWARD zu 84 % und FORWARD zu 81 %. Am h�
 verwechselt werden FORWARD und STOP – vor allem kurz nach dem Augenöffnen, weil Alpha erst nach
 2–3 Sekunden abfällt.
 
-**Wie es dazu kam:**
-
-- **20.08.2026 – scheinbar 100 %.** Die Zahl war ein Fehler: doppelt gespeicherte Zeilen und
-  ein Zufallssplit über sich überlappende Fenster. Seitdem wird mit ganzen, zurückgehaltenen
-  Aufnahmen bewertet und immer die Basisrate danebengestellt.
-- **22.08.2026 – 64,6 %** (Random Forest) gegenüber 52,6 % Basisrate mit STOP, FORWARD und LEFT.
-  Die Verwechslungsmatrix zeigte, dass LEFT systematisch mit FORWARD verwechselt wurde – die
-  Stirnelektrode sieht den motorischen Kortex nicht. LEFT wurde gestrichen.
-- **27.09.2026 – Blindtest zum Berger-Effekt.** Aus dem EEG allein ließ sich für 94,3 % der
-  Sekunden richtig ablesen, ob die Augen offen oder geschlossen waren; Alpha war bei
-  geschlossenen Augen dreimal so hoch.
-- **Danach** kam BACKWARD über ein Muskelsignal dazu – das ergab die Werte oben.
-
-Die Zahlen gelten für eine Person und eine kleine Datenmenge. Für BACKWARD gab es erst zwei
-getrennte Aufnahmen; das Programm weist selbst darauf hin, dass die Angabe für diesen Befehl
+Die Zahlen gelten für eine Person und eine kleine Datenmenge. Für BACKWARD liegen nur zwei
+getrennte Aufnahmen vor; das Programm weist selbst darauf hin, dass die Angabe für diesen Befehl
 damit noch unsicher ist. Modelle lassen sich nicht auf andere Personen übertragen; jede Person
 braucht ihr eigenes Profil.
 

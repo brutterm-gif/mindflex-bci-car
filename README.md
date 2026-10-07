@@ -83,20 +83,7 @@ STOP was recognised correctly 90 % of the time, BACKWARD 84 % and FORWARD 81 %. 
 confusion is FORWARD vs. STOP – mostly right after opening the eyes, because alpha only drops
 after 2–3 seconds.
 
-**How it got there:**
-
-- **20 Aug 2026 – apparently 100 %.** The number was a bug: duplicated rows plus a random split
-  across overlapping windows. Since then, evaluation holds out whole recordings and always shows
-  the baseline next to the accuracy.
-- **22 Aug 2026 – 64.6 %** (random forest) vs. a 52.6 % baseline with STOP, FORWARD and LEFT.
-  The confusion matrix showed LEFT being systematically mistaken for FORWARD – the forehead
-  electrode cannot see the motor cortex. LEFT was dropped.
-- **27 Sep 2026 – blind test of the Berger effect.** From the EEG alone, 94.3 % of the seconds
-  were correctly classified as eyes open or closed; alpha was three times higher with eyes
-  closed.
-- **Afterwards** BACKWARD was added via a muscle signal – which produced the numbers above.
-
-These numbers are for one person and a small amount of data. BACKWARD had only two separate
+These numbers are for one person and a small amount of data. BACKWARD has only two separate
 recordings; the application itself warns that its figure is therefore still uncertain. Models
 do not transfer between people; everyone needs their own profile.
 

@@ -76,7 +76,7 @@ einfach mit, was ohnehin an Pin 1 hinausgeht.
 | 9-V-Block | Stromversorgung des Autos |
 | 3D-gedrucktes Chassis | [`hardware/chassis_car.stl`](../hardware/chassis_car.stl) |
 
-Belegung am Shield (am fertigen Auto ausgemessen, Stand 17.09.2026):
+Belegung am Shield:
 
 ```
             vorne
@@ -256,7 +256,7 @@ und im Profil gespeichert.
 
 Aus einer Aufnahme entstehen viele Fenster, die sich fast vollständig überlappen. Ein
 Zufallssplit über einzelne Fenster würde praktisch dieselben Daten im Training und im Test
-haben und viel zu gute Zahlen liefern – genau das ist am 20.08.2026 passiert (scheinbar 100 %).
+haben und viel zu gute Zahlen liefern.
 
 Deshalb gilt:
 
@@ -345,8 +345,7 @@ stabiler.
 
 - **Eine Elektrode auf der Stirn.** Die Vorstellung von Links- und Rechtsbewegungen entsteht
   über dem motorischen Kortex (C3/C4), dort misst das Headset nicht. LEFT und RIGHT sind deshalb
-  im Code vorhanden, aber nicht aktiv. Ein Versuch mit LEFT zeigte systematische Verwechslungen
-  mit FORWARD.
+  im Code vorhanden, aber nicht aktiv.
 - **Was zuverlässig funktioniert, ist physiologisch gut begründet:** Augen zu gegen Augen auf
   (Berger-Effekt). BACKWARD beruht auf einem Muskelsignal – kein EEG im engeren Sinn, aber
   bewusst steuerbar.
