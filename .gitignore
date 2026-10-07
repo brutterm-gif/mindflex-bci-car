@@ -1,0 +1,8 @@
+.DS_Store
+__pycache__/
+*.pyc
+*.bak
+*.zip
+~$*
+# Persönliche EEG-Profile von Versuchspersonen
+code/MindFlex_BCI_Projekt/profile/
