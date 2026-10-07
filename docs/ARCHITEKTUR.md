@@ -73,7 +73,7 @@ einfach mit, was ohnehin an Pin 1 hinausgeht.
 | L293D-Motor-Shield (HW-130) | vier H-Brücken, angesteuert über ein Schieberegister (74HC595) |
 | 4 TT-Getriebemotoren mit Rädern | Allradantrieb, Lenkung wie bei einem Panzer |
 | BLE-Modul CC2541 (HM-10-Klon) | Funkempfang |
-| Batteriefach, 4 AA-Zellen in Reihe | 4,8–6 V für die Motoren |
+| 9-V-Block | Stromversorgung des Autos |
 | 3D-gedrucktes Chassis | [`hardware/chassis_car.stl`](../hardware/chassis_car.stl) |
 
 Belegung am Shield (am fertigen Auto ausgemessen, Stand 17.09.2026):
@@ -326,10 +326,11 @@ Kanäle – für vier Motoren bräuchte man zwei Module und deutlich mehr Verkab
 
 ### Stromversorgung
 
-Ein 9-V-Block liefert nur wenige hundert Milliampere und bricht unter der Last von vier Motoren
-ein; das Auto ruckelt dann nur. Vier AA-Zellen in Reihe (4,8–6 V) liefern genug Strom für die
-Motoren. Am Headset reicht dagegen ein 9-V-Block, denn dort hängen nur der Uno und ein
-Funkmodul.
+Headset und Auto laufen jeweils mit einem 9-V-Block – leicht, überall erhältlich und schnell
+gewechselt. Am Headset hängen nur der Uno und ein Funkmodul, dafür reicht er locker. Im Auto
+treibt er zusätzlich vier Motoren an. Ein 9-V-Block liefert nur wenige hundert Milliampere; wenn
+alle Motoren gleichzeitig anlaufen, sinkt seine Spannung, und die Fahrzeit ist begrenzt. Wer mehr
+Kraft oder längere Fahrten braucht, kann auf AA-Zellen oder einen Akku umsteigen.
 
 ### Vier Motoren statt zwei
 

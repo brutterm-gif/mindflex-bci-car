@@ -51,17 +51,10 @@
  *
  *   Modul VCC -> 5V
  *   Modul GND -> GND
- *   Modul RXD -> Pin 1 (TX) ueber Spannungsteiler 1 kOhm / 2 kOhm
+ *   Modul RXD -> Pin 1 (TX)
  *   Modul TXD -> nicht anschliessen
  *
- * Der Spannungsteiler ist hier zwingend: Der Arduino sendet mit 5 V, der
- * Eingang des Moduls vertraegt nur 3,3 V.
- *
- *   Pin 1 --[ 1 kOhm ]--+-- Modul RXD
- *                       |
- *                   [ 2 kOhm ]
- *                       |
- *                      GND
+ * Alle Leitungen direkt verbunden, ohne Widerstaende.
  *
  * Am Sketch aendert sich dafuer nichts: Das Modul hoert einfach mit,
  * was ohnehin auf Pin 1 hinausgeht. Der Serielle Monitor am USB-Kabel

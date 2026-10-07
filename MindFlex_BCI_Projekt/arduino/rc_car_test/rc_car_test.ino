@@ -22,15 +22,8 @@
  *   Modul VCC -> Arduino 5V
  *   Modul GND -> Arduino GND
  *   Modul TXD -> Arduino Pin 10          (BT sendet -> Arduino empfaengt)
- *   Modul RXD -> Arduino Pin 11 ueber Spannungsteiler (siehe unten)
+ *   Modul RXD -> Arduino Pin 11, direkt verbunden
  *
- * Spannungsteiler fuer RXD: Der Arduino sendet mit 5V, der RXD-Eingang des
- * Moduls vertraegt aber nur 3,3V. Zwei Widerstaende dazwischen:
- *   Pin 11 --[ 1 kOhm ]--+-- Modul RXD
- *                        |
- *                    [ 2 kOhm ]
- *                        |
- *                       GND
  * Fuer diesen Test allein ist RXD nicht zwingend noetig (der Arduino muss
  * nichts zum Handy zuruecksenden) -- im Zweifel RXD einfach offen lassen.
  */

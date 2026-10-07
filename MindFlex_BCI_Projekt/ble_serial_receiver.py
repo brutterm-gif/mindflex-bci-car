@@ -17,13 +17,11 @@ Verkabelung::
 
     Modul VCC -> 5V
     Modul GND -> GND
-    Modul RXD -> Pin 1 (TX) ueber Spannungsteiler 1 kOhm / 2 kOhm
+    Modul RXD -> Pin 1 (TX), direkt verbunden
     Modul TXD -> nichts
 
-Der Spannungsteiler ist hier zwingend, anders als beim RC-Auto: Dort
-bleibt RXD unbeschaltet, hier laeuft der Datenstrom genau darueber
-hinein. Der Arduino sendet mit 5 V, der Eingang des Moduls vertraegt nur
-3,3 V.
+Anders als beim RC-Auto ist RXD hier Pflicht: Der Datenstrom laeuft genau
+darueber in das Modul hinein.
 
 Diese Klasse ist ein direkter Ersatz fuer ``SerialReceiver`` und hat
 dieselbe Schnittstelle: ``start()``, ``stop()``, ``queue``,

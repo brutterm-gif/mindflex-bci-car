@@ -149,11 +149,12 @@ Alle Bauteile: [Teileliste](docs/TEILELISTE.md). Verkabelung:
 
 2. **RC-Auto (Arduino Duemilanove):** empfängt per Bluetooth LE Einzelzeichen-Befehle
    (`F`/`B`/`L`/`R`/`S`) und steuert über ein L293D-Motor-Shield vier Motoren an. Gelenkt
-   wird wie bei einem Panzer: Zum Drehen laufen die beiden Seiten gegenläufig.
+   wird wie bei einem Panzer: Zum Drehen laufen die beiden Seiten gegenläufig. Strom liefert
+   ein 9-V-Block, der im Chassis unter dem Arduino sitzt.
 
-| Von vorn | Von oben | Von hinten |
+| Seite mit 9-V-Block | Von oben | Seite mit USB-Anschluss |
 |---|---|---|
-| ![RC-Auto von vorn](docs/images/car-front.jpg) | ![RC-Auto von oben: Motor-Shield und Verkabelung der vier Motoren](docs/images/car-top.jpg) | ![RC-Auto von hinten mit USB-Anschluss](docs/images/car-back.jpg) |
+| ![RC-Auto, Seite mit dem 9-V-Block im Chassis](docs/images/car-side-battery.jpg) | ![RC-Auto von oben: Motor-Shield und Verkabelung der vier Motoren](docs/images/car-top.jpg) | ![RC-Auto, Seite mit dem USB-Anschluss des Arduino](docs/images/car-side-usb.jpg) |
 
 | Chassis | Technische Zeichnung |
 |---|---|

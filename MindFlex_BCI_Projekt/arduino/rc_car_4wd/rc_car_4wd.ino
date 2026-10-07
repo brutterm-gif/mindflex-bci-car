@@ -65,18 +65,12 @@
  * BLUETOOTH-MODUL
  * ---------------------------------------------------------------------
  *   Modul VCC -> 5V           Modul TXD -> Pin 10
- *   Modul GND -> GND          Modul RXD -> Pin A0 ueber Spannungsteiler
+ *   Modul GND -> GND          Modul RXD -> Pin A0
  *
- * Der RXD-Pin wird seit dem Rueckkanal gebraucht: Ueber ihn meldet der
- * Arduino seinen Batteriestand zurueck an den Rechner. Weil der Arduino
- * mit 5 V sendet, der Eingang des Moduls aber nur 3,3 V vertraegt,
- * gehoert ein Spannungsteiler dazwischen:
+ * Alle Leitungen direkt verbunden, ohne Widerstaende.
  *
- *   Pin A0 --[ 1 kOhm ]--+-- Modul RXD
- *                        |
- *                    [ 2 kOhm ]
- *                        |
- *                       GND
+ * Der RXD-Pin wird nur fuer den Rueckkanal gebraucht: Ueber ihn meldet
+ * der Arduino seinen Batteriestand zurueck an den Rechner.
  *
  * Ohne den Rueckkanal faehrt das Auto genauso -- dann bleibt RXD offen
  * und es kommt nur keine Batterieanzeige.

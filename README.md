@@ -140,21 +140,22 @@ All components: [parts list](docs/TEILELISTE.md). Wiring:
    HighBeta, LowGamma, HighGamma) – over USB or a BLE module. Arduino and radio sit directly on
    the headset, powered by a switched 9 V battery.
 
-| Headset with Arduino | Side view |
+| Headset mit Arduino · Headset with Arduino | Seitenansicht · Side view |
 |---|---|
 | ![MindFlex headset with Arduino Uno and BLE module attached](docs/images/hardware-headset-arduino.jpg) | ![MindFlex headset from the side](docs/images/hardware-headset-side.jpg) |
-| **Opened: TGAM module with soldered wires** | **Other side: 9 V battery and ear clip** |
+| **Geöffnet: TGAM-Modul mit angelöteten Drähten · Opened: TGAM module with soldered wires** | **Andere Seite: 9-V-Block und Ohrclip · Other side: 9 V battery and ear clip** |
 | ![Opened headset: green NeuroSky TGAM board with wires soldered on, leading to the Arduino](docs/images/hardware-headset-open.jpg) | ![Other side of the headset with the 9 V battery box for the Arduino and the ear clip reference electrode](docs/images/hardware-headset-back.jpg) |
 
 2. **RC car (Arduino Duemilanove):** receives single-character commands (`F`/`B`/`L`/`R`/`S`)
    over Bluetooth LE and drives four motors through an L293D motor shield. It steers like a
-   tank: to turn, the two sides run in opposite directions.
+   tank: to turn, the two sides run in opposite directions. Power comes from a 9 V battery
+   that sits inside the chassis below the Arduino.
 
-| Front | Top | Back |
+| Seite mit 9-V-Block · Side with 9 V battery | Von oben · Top | Seite mit USB-Anschluss · Side with USB port |
 |---|---|---|
-| ![RC car from the front](docs/images/car-front.jpg) | ![RC car from above: motor shield and wiring of the four motors](docs/images/car-top.jpg) | ![RC car from behind with USB port](docs/images/car-back.jpg) |
+| ![RC car, side with the 9 V battery inside the chassis](docs/images/car-side-battery.jpg) | ![RC car from above: motor shield and wiring of the four motors](docs/images/car-top.jpg) | ![RC car, side with the Arduino's USB port](docs/images/car-side-usb.jpg) |
 
-| Chassis | Technical drawing |
+| Chassis | Technische Zeichnung · Technical drawing |
 |---|---|
 | ![Chassis](docs/images/chassis-car.png) | ![Dimensioned drawing of the chassis](docs/images/chassis-car-drawing.png) |
 

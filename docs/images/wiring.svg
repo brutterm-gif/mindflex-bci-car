@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 830" width="100%" role="img" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
 <title>Verkabelung</title>
-<desc>Oben die EEG-Seite: TGAM-Modul im MindFlex-Headset mit T-Pin an Pin 0 und GND an GND des Arduino Uno, BLE-Modul mit RXD direkt an Pin 1, Versorgung über einen 9-V-Block am Rundstecker. Unten die Auto-Seite: Arduino Duemilanove mit L293D-Shield, Motoren M1 vorne rechts, M2 vorne links, M3 hinten links, M4 hinten rechts, BLE-Modul mit TXD an Pin 10 und RXD optional direkt an A0, Batteriefach mit vier AA-Zellen.</desc>
+<desc>Oben die EEG-Seite: TGAM-Modul im MindFlex-Headset mit T-Pin an Pin 0 und GND an GND des Arduino Uno, BLE-Modul mit RXD direkt an Pin 1, Versorgung über einen 9-V-Block am Rundstecker. Unten die Auto-Seite: Arduino Duemilanove mit L293D-Shield, Motoren M1 vorne rechts, M2 vorne links, M3 hinten links, M4 hinten rechts, BLE-Modul mit TXD an Pin 10 und RXD optional direkt an A0, 9-V-Block als Stromversorgung.</desc>
 <style>
   .bg { fill: #ffffff; }
   .hw { fill: #e6f1fb; stroke: #185fa5; }
@@ -106,8 +106,8 @@
 <text class="h sec" x="30" y="404">Auto-Seite: Duemilanove + L293D-Shield</text>
 
 <rect class="pw" x="290" y="418" width="180" height="40" rx="8"/>
-<text class="t pw-t" x="380" y="436" text-anchor="middle">Batteriefach 4 × AA</text>
-<text class="s sub" x="380" y="451" text-anchor="middle">in Reihe, 4,8–6 V</text>
+<text class="t pw-t" x="380" y="436" text-anchor="middle">9-V-Block</text>
+<text class="s sub" x="380" y="451" text-anchor="middle">Stromversorgung des Autos</text>
 <line class="w" x1="380" y1="458" x2="380" y2="480"/>
 
 <rect class="mc" x="270" y="480" width="220" height="180" rx="8"/>
