@@ -5,6 +5,6 @@ __pycache__/
 *.zip
 ~$*
 # Persönliche EEG-Profile von Versuchspersonen
-code/MindFlex_BCI_Projekt/profile/
+MindFlex_BCI_Projekt/profile/
 *.log
 *.autosave
