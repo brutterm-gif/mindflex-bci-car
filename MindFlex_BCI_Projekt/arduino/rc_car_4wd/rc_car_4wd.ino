@@ -64,7 +64,7 @@
  * ---------------------------------------------------------------------
  * BLUETOOTH-MODUL
  * ---------------------------------------------------------------------
- *   Modul VCC -> 5V           Modul TXD -> Pin 10
+ *   Modul VCC -> 3,3V         Modul TXD -> Pin 10
  *   Modul GND -> GND          Modul RXD -> Pin A0
  *
  * Alle Leitungen direkt verbunden, ohne Widerstaende.

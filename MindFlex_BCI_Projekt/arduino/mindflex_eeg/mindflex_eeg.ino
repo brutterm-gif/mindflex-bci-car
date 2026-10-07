@@ -49,7 +49,7 @@
  * Zusaetzlich zur Verkabelung oben kommt ein BLE-Modul der HM-10-Familie
  * (CC2541) an den Sendepin:
  *
- *   Modul VCC -> 5V
+ *   Modul VCC -> 3,3V
  *   Modul GND -> GND
  *   Modul RXD -> Pin 1 (TX)
  *   Modul TXD -> nicht anschliessen

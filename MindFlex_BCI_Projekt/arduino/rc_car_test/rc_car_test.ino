@@ -19,7 +19,7 @@
  * Es laeuft hier ueber SoftwareSerial auf Pin 10/11.
  *
  * Verkabelung Bluetooth (HC-05 / HC-06):
- *   Modul VCC -> Arduino 5V
+ *   Modul VCC -> Arduino 3,3V
  *   Modul GND -> Arduino GND
  *   Modul TXD -> Arduino Pin 10          (BT sendet -> Arduino empfaengt)
  *   Modul RXD -> Arduino Pin 11, direkt verbunden

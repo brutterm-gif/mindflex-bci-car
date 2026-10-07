@@ -54,7 +54,7 @@ TGAM T-Pin   → Uno Pin 0 (RX)
 TGAM GND     → Uno GND
 
 nur für Funk:
-BLE VCC      → 5V
+BLE VCC      → 3,3V
 BLE GND      → GND
 BLE RXD      → Pin 1 (TX)
 BLE TXD      → nicht angeschlossen
@@ -90,10 +90,11 @@ Funkmodul am Duemilanove:
 ```
 BLE TXD → Pin 10   (SoftwareSerial RX)
 BLE RXD → Pin A0   (nur für den Rückkanal nötig)
-BLE VCC → 5V,  GND → GND
+BLE VCC → 3,3V,  GND → GND
 ```
 
-Auch hier ohne Widerstände.
+Auch hier ohne Widerstände. Der Duemilanove hat keinen eigenen 3,3-V-Regler; die 3,3 V
+kommen aus seinem USB-Chip FT232RL (höchstens etwa 50 mA). Für das Funkmodul reicht das.
 
 **Nicht Pin 11 verwenden.** Viele Anleitungen legen das Funkmodul auf `SoftwareSerial(10, 11)`,
 aber auf dem HW-130 ist Pin 11 der PWM-Ausgang von Motor 1. Belegt sind durch das Shield:

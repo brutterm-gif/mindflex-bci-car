@@ -15,7 +15,7 @@ Am Sketch des Arduino aendert sich dadurch nichts.
 
 Verkabelung::
 
-    Modul VCC -> 5V
+    Modul VCC -> 3,3V
     Modul GND -> GND
     Modul RXD -> Pin 1 (TX), direkt verbunden
     Modul TXD -> nichts
